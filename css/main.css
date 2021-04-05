@@ -1065,6 +1065,13 @@ button:focus, select:focus {
     z-index: -1;
     transform: translateX(-50%);
 }
+.step.hidden {
+    display: none;
+}
+.nextBtn,
+.prevBtn {
+    cursor: pointer;
+}
 @media (max-width: 64em) {
     .CalculatorPage_wrapBottom__2MuE8 {
         width: 80vw;
