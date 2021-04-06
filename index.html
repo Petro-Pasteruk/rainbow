@@ -158,7 +158,7 @@
                                 ></path>
                             </svg>
                         </span>
-                        <b>Итого</b><span class="CalculatorPage_priceOutput__2Bptx">32100 ₽</span>
+                        <b>Итого</b><span class="CalculatorPage_priceOutput__2Bptx">0 ₽</span>
                     </p>
                 </div>
                 <div class="CalculatorPage_calculatorContainer__quiK-">
@@ -174,23 +174,23 @@
                             <div>
                                 <div class="Field_field__3XCAx">
                                     <label class="Field_label__3M3Tn" for="0">Место проведения</label>
-                                    <div><input class="Input_field__1TK_J false" id="0" name="address" type="text" placeholder="Введите адрес" value="" /></div>
+                                    <div><input class="Input_field__1TK_J false" id="address" name="address" type="text" placeholder="Введите адрес" value="" /></div>
                                 </div>
                                 <div class="Field_field__3XCAx">
                                     <label class="Field_label__3M3Tn" for="1">Дата</label>
                                     <div>
                                         <div class="react-datepicker-wrapper">
-                                            <div class="react-datepicker__input-container"><input type="text" id="1" name="data" placeholder="Выберите дату или введите в формате ДД.ММ.ГГ" class="Input_field__1TK_J false" value="" /></div>
+                                            <div class="react-datepicker__input-container"><input type="text" id="data" name="data" placeholder="Выберите дату или введите в формате ДД.ММ.ГГ" class="Input_field__1TK_J false" value="" /></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="Field_field__3XCAx">
                                     <label class="Field_label__3M3Tn" for="2">Время</label>
-                                    <div><input class="Input_field__1TK_J false" id="2" name="time" type="text" placeholder="Введите время в формате 00:00" value="" /></div>
+                                    <div><input class="Input_field__1TK_J false" id="time" name="time" type="text" placeholder="Введите время в формате 00:00" value="" /></div>
                                 </div>
                                 <div class="Field_field__3XCAx">
                                     <div>
-                                        <label class="Delivery_label__1uH88">Доставка<input name="delivery" type="checkbox" value="delivery" /><span class="Delivery_checkbox__T5byI"></span></label>
+                                        <label class="Delivery_label__1uH88">Доставка<input name="delivery" type="checkbox" id="delivery" value="delivery" /><span class="Delivery_checkbox__T5byI"></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +210,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Form_buttons__wXTNt"><button class="Button_button__3QF_k" type="button">Назад</button><button class="Button_button__3QF_k nextBtn" type="button">Далее</button></div>
+                                <div class="Form_buttons__wXTNt">
+                                    <button class="Button_button__3QF_k" type="button">Назад</button>
+                                    <button class="Button_button__3QF_k nextBtn" type="button">Далее</button>
+                                </div>
                             </footer>
                         </form>
                     </div>
@@ -330,7 +333,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -345,7 +348,7 @@
                                                     </div>
                                                     <span class="Radio_label__3vCql">Круглая
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">4000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -354,7 +357,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/2.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -367,9 +370,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Круглая пустая
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">3000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -378,7 +381,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/3.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -391,9 +394,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Баннер маленький
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -402,7 +405,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/4.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -415,9 +418,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Квадратный каркас  2*2м 
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -426,7 +429,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/5.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -439,9 +442,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Прямоуг. каркас 2*3м -
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">3000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -450,7 +453,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/6.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -463,9 +466,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Круглый фигурный диаметр 1,80 см.
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">4000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -474,7 +477,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="carcass-design-circle" name="carcass-design" type="checkbox" value="circle" />
+                                                <input id="carcass-design-circle" class="stepTwo-checkbox" name="carcass-design" type="checkbox" value="circle" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/7.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -487,9 +490,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Круглая
+                                                    <span class="Radio_label__3vCql">Баннер «пайетки» серебро Размер 2.10*2.10
                                                         <br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">10 000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -510,7 +513,7 @@
                                         <p class="Steps_item__1p0lc false"></p>
                                     </div>
                                 </div>
-                                <div class="Form_buttons__wXTNt"><button class="Button_button__3QF_k" type="button" disabled="">Назад</button><button class="Button_button__3QF_k nextBtn" type="button">Далее</button></div>
+                                <div class="Form_buttons__wXTNt"><button class="Button_button__3QF_k prevBtn" type="button">Назад</button><button class="Button_button__3QF_k nextBtn" type="button">Далее</button></div>
                             </footer>
                         </form>
                     </div>
@@ -632,7 +635,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -645,9 +648,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">«Стандарт» разнокалиберная гирлянда из шаров 4 м
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4400 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -656,7 +659,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img2.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -669,9 +672,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление квадрантного баннера  «широкой буквой П»
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">6600 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -680,7 +683,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img3.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -693,9 +696,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление «Пустого» каркаса разнокалиберной гирляндой из шаров 6 м
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">6600 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -704,7 +707,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img4.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -717,9 +720,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление «Широкой» разнокалиберной гирлянды с добавлением шаров - гигантов и фольгированных шаров
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">8800 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -728,7 +731,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img5.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -741,9 +744,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление баннера «широкой» разнокалиберной гирляндой из шаров 4 м
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">6600 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -752,7 +755,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img6.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -765,9 +768,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление баннера «буквой Г»  с добавление шаров конфетти и хрома
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">5500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -776,7 +779,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img7.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -789,9 +792,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление баннера «широкой хромовой» гирляндой из шаров
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">8800 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -800,7 +803,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img8.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -813,9 +816,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление баннера «малютка» шарами по периметру
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4400 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -824,7 +827,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="balls-design-miscellaneous" name="balls-design" type="checkbox" value="miscellaneous" />
+                                                <input id="balls-design-miscellaneous" class="threeStep-checkbox" name="balls-design" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/img9.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -837,9 +840,9 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Разнокалиберная с шарами гигантами
+                                                    <span class="Radio_label__3vCql">Оформление баннера «широкой» разнокалиберной гирляндой с гигантами из шаров
                                                         <br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">8800 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -848,7 +851,7 @@
                                 </div>
                                 <div class="Field_field__3XCAx">
                                     <label class="Field_label__3M3Tn" for="1">Укажите цвета</label>
-                                    <div><input class="Input_field__1TK_J false" id="1" name="balls-color" type="text" placeholder="Ваши цвета" value="" /></div>
+                                    <div><input class="Input_field__1TK_J false" id="color" name="balls-color" type="text" placeholder="Ваши цвета" value="" /></div>
                                 </div>
                             </div>
                             <footer class="Form_footer__3ksuY">
@@ -983,11 +986,11 @@
                                 <span class="form_subtitle">Любой рисунок и тема, просто укажите нужный.</span>
                             </p>
                             <div>
-                                <div class="Checkboxes_grid__34DPI Checkboxes_gridCenter__2OEKb false">
+                                <div class="Checkboxes_grid__34DPI Checkboxes_gridCenter__2OEKb false step4">
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="decor-miscellaneous" name="decor" type="checkbox" value="miscellaneous" />
+                                                <input id="decor-miscellaneous" class="fourStep-checkbox" name="decor" type="checkbox" value="miscellaneous" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/banner1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -1000,7 +1003,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Печать на конструкцию</span>
+                                                    <span class="Radio_label__3vCql">Печать на конструкцию
+                                                        <br>
+                                                        <span class="radio_price">3800 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1008,7 +1014,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="decor-miscellaneous-staff" name="decor" type="checkbox" value="miscellaneous-staff" />
+                                                <input id="decor-miscellaneous-staff" class="fourStep-checkbox" name="decor" type="checkbox" value="miscellaneous-staff" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/banner1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -1021,7 +1027,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Оформление буквами</span>
+                                                    <span class="Radio_label__3vCql">Оформление буквами
+                                                        <br>
+                                                        <span class="radio_price">3800 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1030,11 +1039,11 @@
                                 <div class="Fields_fields__1Esit">
                                     <div class="Field_field__3XCAx">
                                         <label class="Field_label__3M3Tn" for="0">Фон</label>
-                                        <div><input class="Input_field__1TK_J false" id="0" name="banner-background" type="text" placeholder="Опишите фон" value="" /></div>
+                                        <div><input class="Input_field__1TK_J false" id="bg" name="banner-background" type="text" placeholder="Опишите фон" value="" /></div>
                                     </div>
                                     <div class="Field_field__3XCAx">
                                         <label class="Field_label__3M3Tn" for="1">Текст</label>
-                                        <div><input class="Input_field__1TK_J false" id="1" name="banner-text" type="text" placeholder="Пример: с днём рождения, Катя" value="" /></div>
+                                        <div><input class="Input_field__1TK_J false" id="text" name="banner-text" type="text" placeholder="Пример: с днём рождения, Катя" value="" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -1185,7 +1194,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Аренда тубусов<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">1000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1194,7 +1203,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="inventory-truck" name="inventory" type="checkbox" value="truck" />
+                                                <input id="inventory-truck" class="fiveStep-checkbox" name="inventory" type="checkbox" value="truck" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/candy1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -1208,7 +1217,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Аренда тележки<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1217,7 +1226,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="inventory-rack" name="inventory" type="checkbox" value="rack" />
+                                                <input id="inventory-rack" class="fiveStep-checkbox" name="inventory" type="checkbox" value="rack" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/candy1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -1231,7 +1240,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Аренда стоек<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1240,7 +1249,7 @@
                                     <div class="Field_field__3XCAx">
                                         <div>
                                             <label class="Radio_field__3Lyvs">
-                                                <input id="inventory-rack" name="inventory" type="checkbox" value="rack" />
+                                                <input id="inventory-rack" class="fiveStep-checkbox" name="inventory" type="checkbox" value="rack" />
                                                 <div class="Radio_checkbox__3ZGR6">
                                                     <div class="Radio_image__16xuG"><img src="./img/candy1.png" /></div>
                                                     <div class="Radio_box__VNKzx">
@@ -1253,8 +1262,8 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Аренда стоек<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                    <span class="Radio_label__3vCql">Карета<br>
+                                                        <span class="radio_price">5000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1411,7 +1420,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Ванильный<br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1434,7 +1443,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Розовый<br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1457,7 +1466,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Голубой<br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1480,7 +1489,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Радужный<br>
-                                                        <span class="radio_price">6000 руб</span>
+                                                        <span class="radio_price">4500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1650,7 +1659,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Бумажная дискотека</span>
+                                                    <span class="Radio_label__3vCql">Бумажная дискотека
+                                                        <br>
+                                                        <span class="radio_price">16000 руб.</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1671,7 +1683,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Фокусник</span>
+                                                    <span class="Radio_label__3vCql">Фокусник
+                                                        <br>
+                                                        <span class="radio_price">8000 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1692,7 +1707,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Химическое шоу</span>
+                                                    <span class="Radio_label__3vCql">Химическое шоу
+                                                        <br>
+                                                        <span class="radio_price">8000 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1713,7 +1731,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Шоу мыльных пузырей</span>
+                                                    <span class="Radio_label__3vCql">Шоу мыльных пузырей
+                                                        <br>
+                                                        <span class="radio_price">7000 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1734,7 +1755,10 @@
                                                             ></path>
                                                         </svg>
                                                     </div>
-                                                    <span class="Radio_label__3vCql">Аниматор (тематический)</span>
+                                                    <span class="Radio_label__3vCql">Аниматор (тематический)
+                                                        <br>
+                                                        <span class="radio_price">4000 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1756,8 +1780,10 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">
-                                                    Мастер-класс на выбор
-                                                </span>
+                                                        Мастер-класс на выбор
+                                                        <br>
+                                                        <span class="radio_price">11000 руб</span>
+                                                    </span>
                                                 </div>
                                             </label>
                                         </div>
@@ -1913,7 +1939,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Цифра шар<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1936,7 +1962,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Шар гигант гелиевый<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1959,7 +1985,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Связка гелиевых шаров<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -1982,7 +2008,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Фотограф<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">2000 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2005,7 +2031,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Праздничный набор <small>(скатерть, салфетки, конфетти (2шт), барные украшения, тарелки, колпаки, растяжка «с днём рождения»</small><br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">1500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2028,7 +2054,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Официант<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">1500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2051,7 +2077,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Цифра шар<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">1500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2074,7 +2100,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Шар гигант гелиевый<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">1500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2097,7 +2123,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Связка гелиевых шаров<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">3500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2120,7 +2146,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Фотограф<br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">7500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2143,7 +2169,7 @@
                                                         </svg>
                                                     </div>
                                                     <span class="Radio_label__3vCql">Праздничный набор <small>(скатерть, салфетки, конфетти (2шт), барные украшения, тарелки, колпаки, растяжка «с днём рождения»</small><br>
-                                                        <span class="radio_price">XXX руб</span>
+                                                        <span class="radio_price">3500 руб</span>
                                                     </span>
                                                 </div>
                                             </label>
@@ -2595,6 +2621,8 @@
     </footer>
 </div>
 <script src="js/scripts.min.js"></script>
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/maskedinput/jquery.maskedinput.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

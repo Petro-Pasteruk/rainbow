@@ -168,6 +168,9 @@ button:focus, select:focus {
     .Checkboxes_grid__34DPI > * {
         margin-bottom: 0!important;
     }
+    .Checkboxes_grid__34DPI.step4 {
+        flex-direction: row;
+    }
     .Steps_list__1wWpv {
         width: 100%;
     }
@@ -175,9 +178,9 @@ button:focus, select:focus {
         grid-template-columns: repeat(auto-fit, minmax(48%, 42%))!important;
         gap: 10px!important;
     }
-    .step8 .Checkboxes_grid__34DPI {
+    /* .step8 .Checkboxes_grid__34DPI {
         grid-template-columns: repeat(auto-fit, minmax(48%, 100%))!important;
-    }
+    } */
 }
 @media (max-width: 64em) {
     .Header_header__1VCKf {
@@ -508,6 +511,7 @@ button:focus, select:focus {
 }
 .Radio_field__3Lyvs {
     display: block;
+    cursor: pointer;
 }
 .Radio_field__3Lyvs input {
     display: none;
@@ -788,6 +792,7 @@ button:focus, select:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    transition: all .3s;
 }
 .Button_button__3QF_k:hover:not(:disabled) {
     background-color: #bfd165;
@@ -795,8 +800,14 @@ button:focus, select:focus {
 .Button_button__3QF_k:active:not(:disabled) {
     opacity: 0.8;
 }
-.Button_button__3QF_k:disabled {
-    opacity: 0.35;
+.Button_button__3QF_k:disabled,
+.Button_button__3QF_k.disabled {
+    opacity: 0.7;
+    background: red;
+}
+.Button_button__3QF_k.disabled:hover {
+    opacity: 0.7;
+    background: red;
 }
 .Fields_fields__1Esit {
     display: flex;
@@ -1071,6 +1082,9 @@ button:focus, select:focus {
 .nextBtn,
 .prevBtn {
     cursor: pointer;
+}
+.nextBtn {
+    position: relative;
 }
 @media (max-width: 64em) {
     .CalculatorPage_wrapBottom__2MuE8 {
