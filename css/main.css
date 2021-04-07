@@ -116,6 +116,9 @@ button:focus, select:focus {
     text-align: center;
     margin-bottom: 24px;
 }
+.form_text.hidden {
+    display: none;
+}
 .form_text-subtitle {
     margin-top: 8px;
     font-size: 14px;
