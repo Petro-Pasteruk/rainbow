@@ -23,18 +23,34 @@ allStep.forEach((item, index) => {
 // Add mask
 $('#time').mask('99:99');
 $('#data').mask('99.99.9999');
-// #address
-
-function funcNextStep (item, index) {
-    item.classList.add("hidden");
-    for (let i = 0; i < allStep.length; i++) {
-        if (i === index + 1) {
-            allStep[i].classList.remove("hidden");
-        }
-    }
-}
 
 function validationStep (item, index) {
+
+    function checkCheckedItem (itemClass) {
+        let
+            allCheckbox = document.querySelectorAll(itemClass),
+            validationCheckbox = 0;
+        allCheckbox.forEach(item => {
+            if (item.checked) {
+                validationCheckbox++;
+            }
+        });
+
+        return validationCheckbox;
+    }
+    function funcNextStep (item, index) {
+        item.classList.add("hidden");
+        for (let i = 0; i < allStep.length; i++) {
+            if (i === index + 1) {
+                allStep[i].classList.remove("hidden");
+            }
+        }
+    }
+    function errorValidation (item) {
+        item.querySelector(".nextBtn").classList.add("disabled");
+        setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+    }
+
     if (index === 0) {
         let reg = /^[а-яА-Я0-9,\.\s]+$/;
         if (document.querySelector("#time").value.length === 5
@@ -43,70 +59,71 @@ function validationStep (item, index) {
 
             funcNextStep(item, index);
         } else {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            errorValidation(item);
         }
     } else if (index === 1) {
-        let
-            allCheckbox = document.querySelectorAll(".stepTwo-checkbox"),
-            validationCheckbox = 0;
-        allCheckbox.forEach(item => {
-            if (item.checked) {
-                validationCheckbox++;
-            }
-        });
+        let validationCheckbox = checkCheckedItem(".stepTwo-checkbox");
+
         if (validationCheckbox > 0) {
             funcNextStep(item, index);
         } else {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            errorValidation(item);
         }
     } else if (index === 2) {
-        let
-            allCheckbox = document.querySelectorAll(".threeStep-checkbox"),
-            validationCheckbox = 0;
-        allCheckbox.forEach(item => {
-            if (item.checked) {
-                validationCheckbox++;
-            }
-        });
+        let validationCheckbox = checkCheckedItem(".threeStep-checkbox");
+
         if (validationCheckbox > 0 && document.querySelector("#color").value.length > 3) {
             funcNextStep(item, index);
         } else {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            errorValidation(item);
         }
     } else if (index === 3) {
-        let
-            allCheckbox = document.querySelectorAll(".fourStep-checkbox"),
-            validationCheckbox = 0;
-        allCheckbox.forEach(item => {
-            if (item.checked) {
-                validationCheckbox++;
-            }
-        });
+        let validationCheckbox = checkCheckedItem(".fourStep-checkbox");
 
         if (validationCheckbox > 0 && document.querySelector("#bg").value.length > 3 && document.querySelector("#text").value.length > 3) {
             funcNextStep(item, index);
         } else {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            errorValidation(item);
         }
     } else if (index === 4)  {
-        let
-            allCheckbox = document.querySelectorAll(".fiveStep-checkbox"),
-            validationCheckbox = 0;
-        allCheckbox.forEach(item => {
-            if (item.checked) {
-                validationCheckbox++;
-            }
-        });
+        let validationCheckbox = checkCheckedItem(".fiveStep-checkbox");
 
         if (validationCheckbox > 0) {
             funcNextStep(item, index);
         } else {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            errorValidation(item);
+        }
+    } else if (index === 5) {
+        let validationCheckbox = checkCheckedItem(".sixthStep-checkbox");
+
+        if (validationCheckbox > 0 && +$("#numberSets").val() > 0) {
+            funcNextStep(item, index);
+        } else {
+            errorValidation(item);
+        }
+    } else if (index === 6) {
+        let validationCheckbox = checkCheckedItem(".seventhStep-checkbox");
+
+        if (validationCheckbox > 0) {
+            funcNextStep(item, index);
+        } else {
+            errorValidation(item);
+        }
+    } else if (index === 7) {
+        let validationCheckbox = checkCheckedItem(".eighthStep-checkbox");
+
+        if (validationCheckbox > 0) {
+            funcNextStep(item, index);
+        } else {
+            errorValidation(item);
         }
     }
 }
+
+// Added functionality to the set counter
+$(".Number_buttonLeft__1WiiT").on("click", function () {
+    $("#numberSets").val(+$("#numberSets").val() - 1 + "");
+});
+$(".Number_buttonRight__1SR-n").on("click", function () {
+    $("#numberSets").val(+$("#numberSets").val() + 1 + "");
+});

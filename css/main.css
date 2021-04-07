@@ -449,6 +449,7 @@ button:focus, select:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
 }
 .Number_buttonLeft__1WiiT {
     top: 0;
