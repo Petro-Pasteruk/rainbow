@@ -1,3 +1,5 @@
+
+
 // Add toggle step
 const allStep = document.querySelectorAll(".step");
 
@@ -25,7 +27,6 @@ $('#time').mask('99:99');
 $('#data').mask('99.99.9999');
 
 function validationStep (item, index) {
-
     function checkCheckedItem (itemClass) {
         let
             allCheckbox = document.querySelectorAll(itemClass),
@@ -127,3 +128,59 @@ $(".Number_buttonLeft__1WiiT").on("click", function () {
 $(".Number_buttonRight__1SR-n").on("click", function () {
     $("#numberSets").val(+$("#numberSets").val() + 1 + "");
 });
+
+
+let
+    currentPrice = 0,
+    price = 0;
+
+function togglePrice (price) {
+    let allPriceDiv = document.querySelectorAll(".CalculatorPage_priceOutput__2Bptx");
+
+    allPriceDiv.forEach(item => {
+        item.textContent = price + " ₽";
+    });
+    $(".form_total").val("Общая стоимость - " + price + " руб.");
+}
+
+$("#delivery").on("click", function () {
+    if ($("#delivery").prop("checked")) {
+        currentPrice = 2000;
+        price += currentPrice;
+        togglePrice(price);
+    } else {
+        currentPrice = 2000;
+        if (price > 0) {
+            price -= currentPrice;
+        }
+        togglePrice(price);
+    }
+});
+
+function addPriceItems (itemClass) {
+    document.querySelectorAll(itemClass).forEach(item => {
+        item.addEventListener("click", function () {
+            if (this.checked) {
+                let priceItem = this.parentElement.querySelector(".radio_price").textContent;
+                currentPrice = +priceItem.substr(0, priceItem.length-4);
+                price += currentPrice;
+                togglePrice(price);
+            } else {
+                let priceItem = this.parentElement.querySelector(".radio_price").textContent;
+                currentPrice = +priceItem.substr(0, priceItem.length-4);
+                if (price > 0) {
+                    price -= currentPrice;
+                }
+                togglePrice(price);
+            }
+        });
+    });
+}
+
+addPriceItems(".stepTwo-checkbox");
+addPriceItems(".threeStep-checkbox");
+addPriceItems(".fourStep-checkbox");
+addPriceItems(".fiveStep-checkbox");
+addPriceItems(".sixthStep-checkbox");
+addPriceItems(".seventhStep-checkbox");
+addPriceItems(".eighthStep-checkbox");
