@@ -36,7 +36,7 @@ $(document).ready(function() {
 
             return validationCheckbox;
         }
-        function funcNextStep (item, index) {
+        function nextStep (item, index) {
             item.classList.add("hidden");
             for (let i = 0; i < allStep.length; i++) {
                 if (i === index + 1) {
@@ -55,7 +55,7 @@ $(document).ready(function() {
                 && document.querySelector("#data").value.length === 10
                 && reg.test(document.querySelector("#address").value)) {
 
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -63,7 +63,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".stepTwo-checkbox");
 
             if (validationCheckbox > 0) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -71,7 +71,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".threeStep-checkbox");
 
             if (validationCheckbox > 0 && document.querySelector("#color").value.length > 3) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -79,7 +79,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".fourStep-checkbox");
 
             if (validationCheckbox > 0 && document.querySelector("#bg").value.length > 3 && document.querySelector("#text").value.length > 3) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -87,7 +87,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".fiveStep-checkbox");
 
             if (validationCheckbox > 0) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -95,7 +95,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".sixthStep-checkbox");
 
             if (validationCheckbox > 0 && +$("#numberSets").val() > 0) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -103,7 +103,7 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".seventhStep-checkbox");
 
             if (validationCheckbox > 0) {
-                funcNextStep(item, index);
+                nextStep(item, index);
             } else {
                 errorValidation(item);
             }
@@ -111,13 +111,25 @@ $(document).ready(function() {
             let validationCheckbox = checkCheckedItem(".eighthStep-checkbox");
 
             if (validationCheckbox > 0) {
-                funcNextStep(item, index);
+                nextStep(item, index);
                 loadSelectedData();
             } else {
                 errorValidation(item);
             }
-        } else {
-            funcNextStep(item, index);
+        } else if (index === 8) {
+            nextStep(item, index);
+        } else if (index === 9) {
+            let
+                regName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+                regEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+            if ($("#userPhone").val().length === 16 && regEmail.test($("#userEmail").val()) && regName.test($("#userName").val())) {
+                sendToMail();
+                nextStep(item, index);
+            } else {
+                this.classList.add("disabled");
+                setTimeout(() => { this.classList.remove("disabled"); }, 3000)
+            }
         }
     }
 
@@ -160,11 +172,13 @@ $(document).ready(function() {
     const data = {
         construction: {
             id: "#construction",
-            selected: []
+            selected: [],
+            toEmail: []
         },
         design: {
             id: "#design",
-            selected: []
+            selected: [],
+            toEmail: []
         },
         banner: {
             id: "#banner",
@@ -204,6 +218,10 @@ $(document).ready(function() {
                     if (key === "sweetSet") {
                         $("#numberSets").val(+$("#numberSets").val()+1)
                     }
+                    if (key === "construction" || key === "design") {
+                        let toEmail = textItem.substr(0, textItem.length-100).trim();
+                        data[key]["toEmail"].push(toEmail);
+                    }
                 } else {
                     let
                         priceItem = this.parentElement.querySelector(".radio_price").textContent,
@@ -220,6 +238,16 @@ $(document).ready(function() {
                             data[key]["selected"][index] = null;
                         }
                     });
+
+
+                    if (key === "construction" || key === "design") {
+                        let toEmail = textItem.substr(0, textItem.length-100).trim();
+                        data[key]["toEmail"].forEach((item, index) => {
+                            if (item === toEmail) {
+                                data[key]["toEmail"][index] = null;
+                            }
+                        });
+                    }
 
                     if (key === "sweetSet") {
                         $("#numberSets").val(+$("#numberSets").val()-1)
@@ -242,7 +270,6 @@ $(document).ready(function() {
 
             if (data[key]["selected"].length >= 1) {
                 data[key]["selected"].forEach(itemToLoad => {
-                    console.log(document.querySelector(data[key].id));
                     if (itemToLoad !== null) {
                         document.querySelector(data[key].id).parentElement.classList.remove("hidden");
                         document.querySelector(data[key].id).textContent = document.querySelector(data[key].id).textContent + "\n" + itemToLoad;
@@ -252,22 +279,63 @@ $(document).ready(function() {
         }
     }
 
-    //userName userEmail userPhone
-
     // Add mask
     $('#time').mask('99:99');
     $('#data').mask('99.99.9999');
     $("#userPhone").mask("+7(999)999-99-99");
 
-    document.querySelector("#submitBtn").addEventListener("click", function () {
+    function sendToMail () {
         let
-            regName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
-            regEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        if ($("#userPhone").val().length === 16 && regEmail.test($("#userEmail").val()) && regName.test($("#userName").val())) {
+            price = document.querySelector(".CalculatorPage_priceOutput__2Bptx").textContent,
+            construction = "",
+            design = "",
+            countSets = $("#numberSets").val(),
+            comments = $("#comments").val().trim(),
+            address = $("#address").val(),
+            date = $("#date").val(),
+            time = $("#time").val(),
+            delivery = "",
+            name = $("#userName").val().trim(),
+            email = $("#userEmail").val().trim(),
+            phone = $("#userPhone").val().trim();
 
-        } else {
-            this.classList.add("disabled");
-            setTimeout(() => { this.classList.remove("disabled"); }, 3000)
+        function fillingToSending (key, variable) {
+            if (data[key]["toEmail"] > 1) {
+                data[key]["toEmail"].forEach(item => {
+                    if (item !== null) {
+                        variable = variable + ", " + item;
+                    }
+                });
+            }
         }
-    });
+
+        fillingToSending("construction", construction);
+        fillingToSending("design", design);
+
+        if ($("#delivery").prop("checked")) {
+            delivery = "Да";
+        } else {
+            delivery = "Нет";
+        }
+
+        $.ajax({
+            url: 'send.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                price: price,
+                construction: construction,
+                design: design,
+                countSets: countSets,
+                comments: comments,
+                address: address,
+                date: date,
+                time: time,
+                delivery: delivery,
+                name: name,
+                email: email,
+                phone: phone
+            }
+        });
+    }
 });
