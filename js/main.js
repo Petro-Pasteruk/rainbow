@@ -292,7 +292,7 @@ $(document).ready(function() {
             countSets = $("#numberSets").val(),
             comments = $("#comments").val().trim(),
             address = $("#address").val(),
-            date = $("#date").val(),
+            date = $("#data").val(),
             time = $("#time").val(),
             delivery = "",
             name = $("#userName").val().trim(),
