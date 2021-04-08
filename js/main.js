@@ -117,19 +117,19 @@ $(document).ready(function() {
                 errorValidation(item);
             }
         } else if (index === 8) {
-            nextStep(item, index);
-        } else if (index === 9) {
             let
                 regName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
                 regEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
             if ($("#userPhone").val().length === 16 && regEmail.test($("#userEmail").val()) && regName.test($("#userName").val())) {
-                sendToMail();
                 nextStep(item, index);
             } else {
                 this.classList.add("disabled");
                 setTimeout(() => { this.classList.remove("disabled"); }, 3000)
             }
+        } else if (index === 9) {
+            sendToMail();
+            nextStep(item, index);
         }
     }
 

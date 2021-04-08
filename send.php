@@ -13,27 +13,36 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 
-$message = 'Стоимость: '.$price.'. ';
-$message .= 'Конструкция: '.$construction.'. ';
-$message .= 'Цвета шаров: '.$design.'. ';
-$message .= 'Количество сетов: '.$countSets.'. ';
-$message .= 'Коментарий: '.$comments.'. ';
-$message .= 'Адрес: '.$address.'. ';
-$message .= 'Дата: '.$date.'. ';
-$message .= 'Время: '.$time.'. ';
-$message .= 'Доставка: '.$delivery.'. ';
-$message .= 'Имя: '.$name.'. ';
-$message .= 'Email: '.$email.'. ';
-$message .= 'Телефон: '.$phone.'. ';
+if($_POST['arrayData']) { //Массив параметров которые пришли через POST запрос
 
-$subject = 'Reinbow request';
-$to = 'petropasteruk@gmail.com';
-$spectex = '<!DOCTYPE HTML><html><head><title>Reinbow request</title></head><body>';
-$headers = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-if (isset($_POST['send'])) {
-    mail( $to , $subject, $spectex.$message.'</body></html>', $headers );
+    $project_name = "Rainbow заявка";//Тема письма
+    $admin_email = "petropasteruk@gmail.com";//То куда отправляем
+
+    $message = 'Стоимость: '.$price.'. ';
+    $message .= 'Конструкция: '.$construction.'. ';
+    $message .= 'Цвета шаров: '.$design.'. ';
+    $message .= 'Количество сетов: '.$countSets.'. ';
+    $message .= 'Коментарий: '.$comments.'. ';
+    $message .= 'Адрес: '.$address.'. ';
+    $message .= 'Дата: '.$date.'. ';
+    $message .= 'Время: '.$time.'. ';
+    $message .= 'Доставка: '.$delivery.'. ';
+    $message .= 'Имя: '.$name.'. ';
+    $message .= 'Email: '.$email.'. ';
+    $message .= 'Телефон: '.$phone.'. ';
+
+    function adopt($text)
+    {
+        return '=?UTF-8?B?' . Base64_encode($text) . '?=';
+    }
+
+    $headers = "MIME-Version: 1.0" . PHP_EOL .
+        "Content-Type: text/html; charset=utf-8" . PHP_EOL . //кодировка письма
+        'From: ' . adopt($project_name) . '<admin@vivel.ru>' . PHP_EOL . //от кого отправляем, а именно с какого доммена или почты
+        'Reply-To: ' . $admin_email . '' . PHP_EOL; //кому отправляем
+
+
+    mail('example@gmail.com', adopt($project_name), $message, $headers);
 }
-
 ?>
 

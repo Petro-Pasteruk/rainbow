@@ -2309,58 +2309,24 @@
                     </svg>
                     <div class="CalculatorPage_form__CjcsJ">
                         <form class="Form_form__2TM1N">
-                            <p class="Form_title__lNS_Y form_title">Выбранные параметры</p>
                             <div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Конструкция
-                                    </div>
-                                    <div class="form_text-subtitle" id="construction"></div>
+                                <div class="Field_field__3XCAx">
+                                    <label class="Field_label__3M3Tn" for="0">Ваше имя</label>
+                                    <div><input class="Input_field__1TK_J false" id="userName" name="name" type="text" placeholder="Введите свое имя" value="" /></div>
                                 </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Оформление/цвет гирлянды из шаров
-                                    </div>
-                                    <div class="form_text-subtitle" id="design"></div>
+                                <div class="Field_field__3XCAx">
+                                    <label class="Field_label__3M3Tn" for="1">Ваш e-mail</label>
+                                    <div><input class="Input_field__1TK_J false" id="userEmail" name="email" type="text" placeholder="Введите свой e-mail" value="" /></div>
                                 </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Оформление баннера
-                                    </div>
-                                    <div class="form_text-subtitle" id="banner"></div>
-                                </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Подставки под Candy-бар
-                                    </div>
-                                    <div class="form_text-subtitle" id="inventory"></div>
-                                </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Сладкий сет для праздника
-                                    </div>
-                                    <div class="form_text-subtitle" id="sweetSet"></div>
-                                </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Программа
-                                    </div>
-                                    <div class="form_text-subtitle" id="program"></div>
-                                </div>
-                                <div class="form_text hidden">
-                                    <div class="form_text-title">
-                                        Дополнительно
-                                    </div>
-                                    <div class="form_text-subtitle" id="additionally"></div>
-                                </div>
-                                <div class="form_total">
-                                    Общая стоимость - 20 000 руб.
+                                <div class="Field_field__3XCAx">
+                                    <label class="Field_label__3M3Tn" for="2">Телефон </label>
+                                    <div><input class="Input_field__1TK_J false" id="userPhone" name="phone" type="text" placeholder="Введите ваш номер телефона" value="" /></div>
                                 </div>
                             </div>
                             <footer class="Form_footer__3ksuY form_center">
                                 <div class="Form_buttons__wXTNt">
                                     <button class="Button_button__3QF_k prevBtn" type="button">Назад</button>
-                                    <button class="Button_button__3QF_k nextBtn" type="button">Отправить</button></div>
+                                    <button class="Button_button__3QF_k nextBtn" id="submitBtn" type="button">Отправить</button></div>
                             </footer>
                         </form>
                     </div>
@@ -2473,24 +2439,58 @@
                     </svg>
                     <div class="CalculatorPage_form__CjcsJ">
                         <form class="Form_form__2TM1N">
+                            <p class="Form_title__lNS_Y form_title">Выбранные параметры</p>
                             <div>
-                                <div class="Field_field__3XCAx">
-                                    <label class="Field_label__3M3Tn" for="0">Ваше имя</label>
-                                    <div><input class="Input_field__1TK_J false" id="userName" name="name" type="text" placeholder="Введите свое имя" value="" /></div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Конструкция
+                                    </div>
+                                    <div class="form_text-subtitle" id="construction"></div>
                                 </div>
-                                <div class="Field_field__3XCAx">
-                                    <label class="Field_label__3M3Tn" for="1">Ваш e-mail</label>
-                                    <div><input class="Input_field__1TK_J false" id="userEmail" name="email" type="text" placeholder="Введите свой e-mail" value="" /></div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Оформление/цвет гирлянды из шаров
+                                    </div>
+                                    <div class="form_text-subtitle" id="design"></div>
                                 </div>
-                                <div class="Field_field__3XCAx">
-                                    <label class="Field_label__3M3Tn" for="2">Телефон </label>
-                                    <div><input class="Input_field__1TK_J false" id="userPhone" name="phone" type="text" placeholder="Введите ваш номер телефона" value="" /></div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Оформление баннера
+                                    </div>
+                                    <div class="form_text-subtitle" id="banner"></div>
+                                </div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Подставки под Candy-бар
+                                    </div>
+                                    <div class="form_text-subtitle" id="inventory"></div>
+                                </div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Сладкий сет для праздника
+                                    </div>
+                                    <div class="form_text-subtitle" id="sweetSet"></div>
+                                </div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Программа
+                                    </div>
+                                    <div class="form_text-subtitle" id="program"></div>
+                                </div>
+                                <div class="form_text hidden">
+                                    <div class="form_text-title">
+                                        Дополнительно
+                                    </div>
+                                    <div class="form_text-subtitle" id="additionally"></div>
+                                </div>
+                                <div class="form_total">
+                                    Общая стоимость - 20 000 руб.
                                 </div>
                             </div>
                             <footer class="Form_footer__3ksuY form_center">
                                 <div class="Form_buttons__wXTNt">
                                     <button class="Button_button__3QF_k prevBtn" type="button">Назад</button>
-                                    <button class="Button_button__3QF_k nextBtn" id="submitBtn" type="button">Отправить</button></div>
+                                    <button class="Button_button__3QF_k nextBtn" type="button">Отправить</button></div>
                             </footer>
                         </form>
                     </div>
