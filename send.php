@@ -1,35 +1,35 @@
 <?php
 
-$price = $_POST["price"];
-$construction = $_POST["construction"];
-$design = $_POST["design"];
-$countSets = $_POST["countSets"];
-$comments = $_POST["comments"];
-$address = $_POST["address"];
-$date = $_POST["date"];
-$time = $_POST["time"];
-$delivery = $_POST["delivery"];
-$name = $_POST["name"];
-$email = $_POST["email"];
-$phone = $_POST["phone"];
+if($_POST) { //Массив параметров которые пришли через POST запрос
 
-if($_POST['arrayData']) { //Массив параметров которые пришли через POST запрос
+    $price = $_POST["price"];
+    $construction = $_POST["construction"];
+    $design = $_POST["design"];
+    $countSets = $_POST["countSets"];
+    $comments = $_POST["comments"];
+    $address = $_POST["address"];
+    $date = $_POST["date"];
+    $time = $_POST["time"];
+    $delivery = $_POST["delivery"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
 
     $project_name = "Rainbow заявка";//Тема письма
     $admin_email = "petropasteruk@gmail.com";//То куда отправляем
 
-    $message = 'Стоимость: '.$price.'. ';
-    $message .= 'Конструкция: '.$construction.'. ';
-    $message .= 'Цвета шаров: '.$design.'. ';
-    $message .= 'Количество сетов: '.$countSets.'. ';
-    $message .= 'Коментарий: '.$comments.'. ';
-    $message .= 'Адрес: '.$address.'. ';
-    $message .= 'Дата: '.$date.'. ';
-    $message .= 'Время: '.$time.'. ';
-    $message .= 'Доставка: '.$delivery.'. ';
-    $message .= 'Имя: '.$name.'. ';
-    $message .= 'Email: '.$email.'. ';
-    $message .= 'Телефон: '.$phone.'. ';
+    $message = 'Стоимость: '.$price. '.' . '<br />';
+    $message .= 'Конструкция: '.$construction. '.' . '<br />';
+    $message .= 'Цвета шаров: '.$design. '.' . '<br />';
+    $message .= 'Количество сетов: '.$countSets. '.' . '<br />';
+    $message .= 'Коментарий: '.$comments. '.' . '<br />';
+    $message .= 'Адрес: '.$address. '.' . '<br />';
+    $message .= 'Дата: '.$date. '.' . '<br />';
+    $message .= 'Время: '.$time. '.' . '<br />';
+    $message .= 'Доставка: '.$delivery. '.' . '<br />';
+    $message .= 'Имя: '.$name. '.' . '<br />';
+    $message .= 'Email: '.$email. '.' . '<br />';
+    $message .= 'Телефон: '.$phone. '.' . '<br />';
 
     function adopt($text)
     {
@@ -42,7 +42,7 @@ if($_POST['arrayData']) { //Массив параметров которые п�
         'Reply-To: ' . $admin_email . '' . PHP_EOL; //кому отправляем
 
 
-    mail('example@gmail.com', adopt($project_name), $message, $headers);
+    mail($admin_email, adopt($project_name), $message, $headers);
 }
 ?>
 

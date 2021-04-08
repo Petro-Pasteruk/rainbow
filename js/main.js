@@ -287,8 +287,8 @@ $(document).ready(function() {
     function sendToMail () {
         let
             price = document.querySelector(".CalculatorPage_priceOutput__2Bptx").textContent,
-            construction = "",
-            design = "",
+            construction = fillingToSending("construction"),
+            design = fillingToSending("design"),
             countSets = $("#numberSets").val(),
             comments = $("#comments").val().trim(),
             address = $("#address").val(),
@@ -299,18 +299,22 @@ $(document).ready(function() {
             email = $("#userEmail").val().trim(),
             phone = $("#userPhone").val().trim();
 
-        function fillingToSending (key, variable) {
-            if (data[key]["toEmail"] > 1) {
+        function fillingToSending (key) {
+            let variable = "";
+            if (data[key]["toEmail"].length > 1) {
                 data[key]["toEmail"].forEach(item => {
                     if (item !== null) {
-                        variable = variable + ", " + item;
+                        if (variable !== "") {
+                            variable = variable + ", " + item;
+                        } else {
+                            variable = item;
+                        }
                     }
                 });
             }
-        }
 
-        fillingToSending("construction", construction);
-        fillingToSending("design", design);
+            return variable;
+        }
 
         if ($("#delivery").prop("checked")) {
             delivery = "Да";
