@@ -1,7 +1,6 @@
 <?php
 
-if($_POST) { //Массив параметров которые пришли через POST запрос
-
+if($_POST) {
     $price = $_POST["price"];
     $construction = $_POST["construction"];
     $design = $_POST["design"];
@@ -16,7 +15,7 @@ if($_POST) { //Массив параметров которые пришли ч�
     $phone = $_POST["phone"];
 
     $project_name = "Rainbow заявка";//Тема письма
-    $admin_email = "petropasteruk@gmail.com";//То куда отправляем
+    $admin_email = "L6mon@yandex.ru";//То куда отправляем
 
     $message = 'Стоимость: '.$price. '.' . '<br />';
     $message .= 'Конструкция: '.$construction. '.' . '<br />';

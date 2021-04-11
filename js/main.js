@@ -45,100 +45,94 @@ $(document).ready(function() {
             }
         }
         function errorValidation (item) {
-            item.querySelector(".nextBtn").classList.add("disabled");
-            setTimeout(() => { item.querySelector(".nextBtn").classList.remove("disabled"); }, 3000)
+            document.querySelector(item).classList.add("error");
+            setTimeout(() => { document.querySelector(item).classList.remove("error") }, 3000)
         }
 
-        if (index === 0) {
-            let reg = /^[а-яА-Я0-9,\.\s]+$/;
-            if (document.querySelector("#time").value.length === 5
-                && document.querySelector("#data").value.length === 10
-                && reg.test(document.querySelector("#address").value)) {
-
+        if (index === 0 || index === 1 || index === 2 || index === 3 || index === 4 || index === 5 || index === 6 || index === 8) {
                 nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 1) {
-            let validationCheckbox = checkCheckedItem(".stepTwo-checkbox");
-
-            if (validationCheckbox > 0) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 2) {
-            let validationCheckbox = checkCheckedItem(".threeStep-checkbox");
-
-            if (validationCheckbox > 0 && document.querySelector("#color").value.length > 3) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 3) {
-            let validationCheckbox = checkCheckedItem(".fourStep-checkbox");
-
-            if (validationCheckbox > 0 && document.querySelector("#bg").value.length > 3 && document.querySelector("#text").value.length > 3) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 4)  {
-            let validationCheckbox = checkCheckedItem(".fiveStep-checkbox");
-
-            if (validationCheckbox > 0) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 5) {
-            let validationCheckbox = checkCheckedItem(".sixthStep-checkbox");
-
-            if (validationCheckbox > 0 && +$("#numberSets").val() > 0) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 6) {
-            let validationCheckbox = checkCheckedItem(".seventhStep-checkbox");
-
-            if (validationCheckbox > 0) {
-                nextStep(item, index);
-            } else {
-                errorValidation(item);
-            }
         } else if (index === 7) {
-            let validationCheckbox = checkCheckedItem(".eighthStep-checkbox");
-
-            if (validationCheckbox > 0) {
-                nextStep(item, index);
+            let reg = /^[а-яА-Я0-9,\.\s]+$/;
+            if (document.querySelector("#time").value.length !== 5
+                && document.querySelector("#data").value.length !== 10
+                && !reg.test(document.querySelector("#address").value)) {
+                errorValidation("#time");
+                errorValidation("#data");
+                errorValidation("#address");
+            } else if (document.querySelector("#data").value.length !== 10 && !reg.test(document.querySelector("#address").value)) {
+                errorValidation("#data");
+                errorValidation("#address");
+            } else if (!reg.test(document.querySelector("#address").value) && document.querySelector("#time").value.length !== 5) {
+                errorValidation("#address");
+                errorValidation("#time");
+            } else if (document.querySelector("#time").value.length !== 5 && document.querySelector("#data").value.length !== 10) {
+                errorValidation("#data");
+                errorValidation("#time");
+            } else if (document.querySelector("#time").value.length !== 5) {
+                errorValidation("#time");
+            } else if (document.querySelector("#data").value.length !== 10) {
+                errorValidation("#data");
+            } else if (!reg.test(document.querySelector("#address").value)) {
+                errorValidation("#address");
+            } else {
                 loadSelectedData();
-            } else {
-                errorValidation(item);
-            }
-        } else if (index === 8) {
-            let
-                regName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
-                regEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-
-            if ($("#userPhone").val().length === 16 && regEmail.test($("#userEmail").val()) && regName.test($("#userName").val())) {
                 nextStep(item, index);
-            } else {
-                this.classList.add("disabled");
-                setTimeout(() => { this.classList.remove("disabled"); }, 3000)
             }
         } else if (index === 9) {
-            sendToMail();
-            nextStep(item, index);
+            let
+                regName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+                regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+
+            if ($("#userPhone").val().length !== 16
+                && !regEmail.test($("#userEmail").val())
+                && !regName.test($("#userName").val())) {
+                errorValidation("#userPhone");
+                errorValidation("#userEmail");
+                errorValidation("#userName");
+                console.log(1);
+            } else if (!regEmail.test($("#userEmail").val()) && !regName.test($("#userName").val())) {
+                errorValidation("#userEmail");
+                errorValidation("#userName");
+                console.log(2);
+            } else if (!regName.test($("#userName").val()) && $("#userPhone").val().length !== 16) {
+                errorValidation("#userName");
+                errorValidation("#userPhone");
+                console.log(3);
+            } else if ($("#userPhone").val().length !== 16 && !regEmail.test($("#userEmail").val())) {
+                errorValidation("#userEmail");
+                errorValidation("#userPhone");
+                console.log(4);
+            } else if ($("#userPhone").val().length !== 16) {
+                errorValidation("#userPhone");
+            } else if (!regEmail.test($("#userEmail").val())) {
+                errorValidation("#userEmail");
+            } else if (!regName.test($("#userName").val())) {
+                errorValidation("#userName");
+            } else {
+                nextStep(item, index);
+                sendToMail();
+            }
         }
     }
 
     // Added functionality to the set counter
     $(".Number_buttonLeft__1WiiT").on("click", function () {
-        $("#numberSets").val(+$("#numberSets").val() - 1 + "");
+        document.querySelectorAll(".sixthStep-checkbox").forEach(item => {
+            if (item.classList.contains("lastClick")) {
+                if (+item.value !== 0) {
+                    item.value = +item.value - 1;
+                    $("#numberSets").val(item.value);
+                }
+            }
+        });
     });
     $(".Number_buttonRight__1SR-n").on("click", function () {
-        $("#numberSets").val(+$("#numberSets").val() + 1 + "");
+        document.querySelectorAll(".sixthStep-checkbox").forEach(item => {
+            if (item.classList.contains("lastClick")) {
+                item.value = +item.value + 1;
+                $("#numberSets").val(item.value);
+            }
+        });
     });
 
     // Toggle price
@@ -216,7 +210,11 @@ $(document).ready(function() {
                     data[key]["selected"].push(text);
 
                     if (key === "sweetSet") {
-                        $("#numberSets").val(+$("#numberSets").val()+1)
+                        $("#numberSets").val(+item.value);
+                        document.querySelectorAll(".sixthStep-checkbox").forEach(i => {
+                            i.classList.remove("lastClick");
+                        });
+                        item.classList.add("lastClick");
                     }
                     if (key === "construction" || key === "design") {
                         let toEmail = textItem.substr(0, textItem.length-100).trim();
@@ -250,7 +248,19 @@ $(document).ready(function() {
                     }
 
                     if (key === "sweetSet") {
-                        $("#numberSets").val(+$("#numberSets").val()-1)
+                        let counter = 0;
+                        item.classList.remove("lastClick");
+                        document.querySelectorAll(".sixthStep-checkbox").forEach(i => {
+                            if (i.checked) {
+                                $("#numberSets").val(+i.value);
+                                counter--;
+                            } else {
+                                counter++;
+                            }
+                        });
+                        if (counter === 4) {
+                            $("#numberSets").val(0);
+                        }
                     }
                 }
             });
@@ -289,7 +299,7 @@ $(document).ready(function() {
             price = document.querySelector(".CalculatorPage_priceOutput__2Bptx").textContent,
             construction = fillingToSending("construction"),
             design = fillingToSending("design"),
-            countSets = $("#numberSets").val(),
+            countSets = 0,
             comments = $("#comments").val().trim(),
             address = $("#address").val(),
             date = $("#data").val(),
@@ -315,6 +325,10 @@ $(document).ready(function() {
 
             return variable;
         }
+
+        document.querySelectorAll(".sixthStep-checkbox").forEach(item => {
+            countSets = +countSets + +item.value;
+        });
 
         if ($("#delivery").prop("checked")) {
             delivery = "Да";

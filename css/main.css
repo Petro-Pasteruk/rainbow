@@ -804,14 +804,8 @@ button:focus, select:focus {
 .Button_button__3QF_k:active:not(:disabled) {
     opacity: 0.8;
 }
-.Button_button__3QF_k:disabled,
-.Button_button__3QF_k.disabled {
+.Button_button__3QF_k:disabled {
     opacity: 0.7;
-    background: red;
-}
-.Button_button__3QF_k.disabled:hover {
-    opacity: 0.7;
-    background: red;
 }
 .Fields_fields__1Esit {
     display: flex;
@@ -883,6 +877,10 @@ button:focus, select:focus {
     display: flex;
     flex-direction: column;
     min-height: 42em;
+}
+.Input_field__-9TK_J.error,
+.Input_field__1TK_J.error {
+    border: 2px solid #D81F23;
 }
 @media (max-width: 64em) {
     .Form_form__2TM1N {
