@@ -75,6 +75,9 @@ $(document).ready(function() {
             } else if (!reg.test(document.querySelector("#address").value)) {
                 errorValidation("#address");
             } else {
+                if ($("#delivery").prop("checked")) {
+                    document.querySelector("#deliveryResult").parentElement.classList.remove("hidden");
+                }
                 loadSelectedData();
                 nextStep(item, index);
             }
@@ -89,19 +92,15 @@ $(document).ready(function() {
                 errorValidation("#userPhone");
                 errorValidation("#userEmail");
                 errorValidation("#userName");
-                console.log(1);
             } else if (!regEmail.test($("#userEmail").val()) && !regName.test($("#userName").val())) {
                 errorValidation("#userEmail");
                 errorValidation("#userName");
-                console.log(2);
             } else if (!regName.test($("#userName").val()) && $("#userPhone").val().length !== 16) {
                 errorValidation("#userName");
                 errorValidation("#userPhone");
-                console.log(3);
             } else if ($("#userPhone").val().length !== 16 && !regEmail.test($("#userEmail").val())) {
                 errorValidation("#userEmail");
                 errorValidation("#userPhone");
-                console.log(4);
             } else if ($("#userPhone").val().length !== 16) {
                 errorValidation("#userPhone");
             } else if (!regEmail.test($("#userEmail").val())) {
