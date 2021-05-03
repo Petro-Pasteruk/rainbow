@@ -37,7 +37,7 @@ if($_POST) {
 
     $headers = "MIME-Version: 1.0" . PHP_EOL .
         "Content-Type: text/html; charset=utf-8" . PHP_EOL . //кодировка письма
-        'From: ' . adopt($project_name) . '<admin@vivel.ru>' . PHP_EOL . //от кого отправляем, а именно с какого доммена или почты
+        'From: ' . adopt($project_name) . '<admin@rainbowagency.ru/>' . PHP_EOL . //от кого отправляем, а именно с какого доммена или почты
         'Reply-To: ' . $admin_email . '' . PHP_EOL; //кому отправляем
 
 
