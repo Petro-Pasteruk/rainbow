@@ -150,11 +150,11 @@ $(document).ready(function() {
 
     $("#delivery").on("click", function () {
         if ($("#delivery").prop("checked")) {
-            currentPrice = 2000;
+            currentPrice = 1500;
             price += currentPrice;
             togglePrice(price);
         } else {
-            currentPrice = 2000;
+            currentPrice = 1500;
             if (price > 0) {
                 price -= currentPrice;
             }
